@@ -1,11 +1,15 @@
 package info
 
 import (
-	"bufio"
-	"os"
+	"fmt"
 )
 
 const MainTitle = "BMI Calculatore"
 const Seprator = "-------------------"
+const WeightPrompt = "Please enter your weight (kg):"
+const HeightPrompt = "Please enter your height (m):"
 
-var Reader = bufio.NewReader(os.Stdin)
+func PrintWelcome() {
+	fmt.Println(MainTitle)
+	fmt.Println(Seprator)
+}

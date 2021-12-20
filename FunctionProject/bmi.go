@@ -1,29 +1,18 @@
 package main
 
 import (
-	"fmt"
-	"github.com/meysamhadeli/Go.Samples/VariableProject/info"
-	"strconv"
-	"strings"
+	"github.com/meysamhadeli/Go.Samples/FunctionProject/info"
+	"github.com/meysamhadeli/Go.Samples/FunctionProject/reader"
 )
 
 func main() {
-	fmt.Println(info.MainTitle)
-	fmt.Println(info.Seprator)
-	fmt.Print("Please enter your weight (kg):")
+	info.PrintWelcome()
 
-	weightInput, _ := info.Reader.ReadString('\n')
-	fmt.Print("Please enter your height (m):")
-	heightInput, _ := info.Reader.ReadString('\n')
+	weight, height := reader.GetUserMetrics()
+	bmi := calculateBMI(weight, height)
+	PrintBMI(bmi)
+}
 
-	weightInput = strings.Replace(weightInput, "\r\n", "", -1)
-	heightInput = strings.Replace(heightInput, "\r\n", "", -1)
-
-	weight, _ := strconv.ParseFloat(weightInput, 64)
-	height, _ := strconv.ParseFloat(heightInput, 64)
-
-	bmi := weight / (height * height)
-
-	fmt.Print("Your BMI: ", bmi)
-
+func calculateBMI(weight float64, height float64) float64 {
+	return weight / (height * height)
 }

@@ -1,3 +1,3 @@
-module github.com/meysamhadeli/Go.Samples/VariableProject
-go 1.17
+module github.com/meysamhadeli/Go.Samples/FunctionProject
 
+go 1.17
