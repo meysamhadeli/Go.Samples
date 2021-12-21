@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7434119-8bdf-4745-b5aa-1cea3b1a8484" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/FunctionProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bmi.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/info/info.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reader/reader.go" afterDir="false" />
+    <list default="true" id="f7434119-8bdf-4745-b5aa-1cea3b1a8484" name="Changes" comment="add function sample">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +47,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
     <property name="go.watchers.conflict.with.on.save.actions.check.performed" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PointerProject" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
@@ -105,6 +98,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add function sample" />
+    <option name="LAST_COMMIT_MESSAGE" value="add function sample" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
