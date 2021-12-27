@@ -34,7 +34,6 @@ func main() {
 }
 
 func getInputNumber() (int, error) {
-	fmt.Print("please make your choice: ")
 	inputNumber, err := reader.ReadString('\n')
 
 	if err != nil {
@@ -63,22 +62,78 @@ func calculateSumUpToNumber() {
 	}
 
 	fmt.Println(chosenNumber)
+	sum := 0
 
-	for i := 0; i < 5; i++ {
-		fmt.Println(i)
+	for i := 1; i <= chosenNumber; i++ {
+		sum = sum + i
 	}
+
+	println("Result: %v", sum)
 }
 
 func calculateFactorial() {
+	fmt.Print("Please enter your number:  ")
+	chosenNumber, err := getInputNumber()
 
+	if err != nil {
+		fmt.Println("Invalid number input")
+		return
+	}
+
+	factorial := 1
+
+	for i := 1; i <= chosenNumber; i++ {
+		factorial = factorial * i
+	}
+
+	println("Result: %v", factorial)
 }
 
 func calculateSumManually() {
+	sum := 0
+	isEnteringNumbers := true
+
+	println("Keep on entering numbers")
+
+	for isEnteringNumbers {
+		chosenNumber, err := getInputNumber()
+		sum = sum + chosenNumber
+
+		if err != nil {
+			isEnteringNumbers = false
+		}
+	}
+
+	fmt.Println("Result: %v\n", sum)
 
 }
 
 func calculateListSum() {
+	fmt.Println("Please enter a comma-separated list of numbers.")
 
+	inputNumberList, err := reader.ReadString('\n')
+
+	if err != nil {
+		fmt.Println("Invalid input!")
+		return
+	}
+
+	inputNumberList = strings.Replace(inputNumberList, "\r\n", "", -1)
+	inputNumbers := strings.Split(inputNumberList, ",")
+
+	sum := 0
+
+	for index, value := range inputNumbers {
+		fmt.Println("Index: %v, Value: %v\n", index, value)
+		number, err := strconv.ParseInt(value, 0, 64)
+
+		if err != nil {
+			continue
+		}
+		sum = sum + int(number)
+	}
+
+	fmt.Printf("Result: %v\n", sum)
 }
 
 func getUserChoice() (string, error) {
@@ -88,6 +143,7 @@ func getUserChoice() (string, error) {
 	fmt.Println("3) Sum up manually entered numbers")
 	fmt.Println("4) Sum up a list of entered numbers")
 
+	fmt.Print("please make your choice: ")
 	userInput, err := reader.ReadString('\n')
 
 	if err != nil {
