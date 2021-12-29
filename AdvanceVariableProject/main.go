@@ -21,7 +21,6 @@ func main() {
 	//hobbies := []string{"Sport", "Reading"}
 
 	//make
-
 	hobbies := make([]string, 2, 10)
 	hobbies[0] = "Sport"
 	hobbies[1] = "Reading"
