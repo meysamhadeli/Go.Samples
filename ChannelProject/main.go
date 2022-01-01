@@ -11,24 +11,49 @@ var randN = rand.New(source)
 
 func main() {
 
-	c := make(chan int)
+	x := make(chan int)
+	y := make(chan int)
 
-	go generateValue(c)
-	go generateValue(c)
+	limiter := make(chan int, 3)
 
-	x := <-c
-	y := <-c
+	go generateValue(x, limiter)
+	go generateValue(y, limiter)
+	//go generateValue(c, limiter)
+	//go generateValue(c, limiter)
 
-	sum := x + y
-	fmt.Println(sum)
+	var a int
+	var b int
+
+	select {
+	case a = <-x:
+		fmt.Println("received from x", a)
+	case b = <-y:
+		fmt.Println("received from y", b)
+	}
+
+	//sum := 0
+	//i := 0
+	//
+	//for num := range c {
+	//	sum += num
+	//	i++
+	//	if i == 4 {
+	//		close(c)
+	//	}
+	//}
+	//
+	//fmt.Println(sum)
 }
 
-func generateValue(c chan int) int {
+func generateValue(c chan int, limit chan int) int {
+	limit <- 1
+	fmt.Println("Generating value...")
 	sleepTime := randN.Intn(3)
 	time.Sleep(time.Duration(sleepTime) * time.Second)
 
 	result := randN.Intn(10)
 	c <- result
+	<-limit
 	return result
 }
 
